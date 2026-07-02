@@ -7,7 +7,6 @@
 ![Power BI](https://img.shields.io/badge/PowerBI-Dashboard-yellow?logo=powerbi)
 ![Scikit Learn](https://img.shields.io/badge/Scikit--Learn-ML-f7931e?logo=scikitlearn)
 ![XGBoost](https://img.shields.io/badge/XGBoost-Gradient%20Boosting-green)
-![License](https://img.shields.io/badge/License-MIT-success)
 
 </p>
 
@@ -15,35 +14,34 @@
 
 ## 📌 Project Overview
 
-Airline loyalty programs generate massive amounts of customer data, yet identifying customers likely to disengage remains a major challenge.
+Airline loyalty programs generate large volumes of customer and flight activity data. However, identifying customers who are likely to disengage from the loyalty program before they leave remains a significant challenge.
 
-This project presents an **end-to-end customer analytics and machine learning solution** that combines **SQL-based data processing, feature engineering, predictive modeling, and interactive Power BI dashboards** to help airlines proactively identify at-risk customers and design personalized retention strategies.
+This project presents an **end-to-end customer analytics and machine learning solution** that combines **data preprocessing, feature engineering, predictive modeling, and business intelligence** to identify at-risk customers, estimate revenue impact, and recommend targeted retention strategies.
 
-The project demonstrates how analytics and machine learning can transform raw operational data into actionable business insights.
+The solution integrates customer analytics with interactive Power BI dashboards to provide actionable insights for business decision-makers.
 
 ---
 
 # 🎯 Business Objectives
 
-- Understand customer behavior across the loyalty program
-- Segment customers based on value and engagement
-- Predict customer churn using machine learning
-- Estimate revenue at risk
-- Generate actionable retention recommendations
-- Build an interactive executive dashboard for decision-makers
+- Analyze customer behavior across the airline loyalty program.
+- Segment customers based on engagement and lifetime value.
+- Predict customer churn using machine learning.
+- Estimate potential revenue at risk.
+- Generate personalized retention recommendations.
+- Build an interactive executive dashboard for business users.
 
 ---
 
 # 🚀 Key Highlights
 
-- ✅ End-to-End Analytics Pipeline
-- ✅ SQL-Based Data Processing
-- ✅ Feature Engineering
+- ✅ End-to-End Customer Analytics Pipeline
+- ✅ Data Cleaning & Feature Engineering
 - ✅ Customer Segmentation
-- ✅ Churn Prediction
+- ✅ Churn Prediction using Machine Learning
 - ✅ Customer Risk Scoring
-- ✅ Interactive Power BI Dashboard
-- ✅ Business Recommendation System
+- ✅ Power BI Executive Dashboard
+- ✅ Business Intelligence & Insights
 
 ---
 
@@ -52,7 +50,7 @@ The project demonstrates how analytics and machine learning can transform raw op
 ```mermaid
 flowchart TD
 
-A[Airline Customer Dataset]
+A[Airline Loyalty Dataset]
 
 A --> B[Customer Profile]
 
@@ -62,34 +60,32 @@ B --> D[Data Cleaning]
 
 C --> D
 
-D --> E[SQL Integration]
+D --> E[Feature Engineering]
 
-E --> F[Feature Engineering]
+E --> F[Customer Segmentation]
 
-F --> G[Customer Segmentation]
+F --> G[Machine Learning Models]
 
-G --> H[Machine Learning]
+G --> H[Logistic Regression]
 
-H --> I[Logistic Regression]
+G --> I[Random Forest]
 
-H --> J[Random Forest]
+G --> J[XGBoost]
 
-H --> K[XGBoost]
+H --> K[Customer Risk Scoring]
 
-I --> L[Customer Risk Scoring]
+I --> K
 
-J --> L
+J --> K
 
-K --> L
+K --> L[Power BI Dashboard]
 
-L --> M[Power BI Dashboard]
-
-M --> N[Business Insights & Retention Strategies]
+L --> M[Business Recommendations]
 ```
 
 ---
 
-# 🔄 End-to-End Workflow
+# 🔄 Project Workflow
 
 ```mermaid
 flowchart LR
@@ -97,8 +93,6 @@ flowchart LR
 Raw_Data
 
 --> Data_Cleaning
-
---> SQL_Transformation
 
 --> Feature_Engineering
 
@@ -117,45 +111,25 @@ Raw_Data
 
 ---
 
-# 📂 Repository Structure
-
-```
-airline-loyalty-retention-analytics
-│
-├── dashboard/
-│   ├── Airline_Dashboard.pbix
-│   ├── dashboard_preview.png
-│   └── screenshots/
-│
-├── images/
-│
-├── ml/
-│   ├── notebooks/
-│   ├── trained_models/
-│   └── processed_data/
-│
-├── sql/
-│
-├── reports/
-│
-├── README.md
-├── requirements.txt
-└── LICENSE
-```
-
----
-
 # 📊 Dataset
 
-The project utilizes airline loyalty program data consisting of:
+The project combines customer profile information with monthly airline activity to build a customer-level analytical dataset.
 
-- Customer Demographics
+### Customer Information
+
+- Demographics
 - Loyalty Card Information
 - Customer Lifetime Value (CLV)
-- Flight Activity History
+- Enrollment Details
+- Cancellation Information
+
+### Flight Activity
+
 - Monthly Flight Records
-- Reward Points
-- Enrollment & Cancellation Information
+- Total Flights
+- Distance Travelled
+- Loyalty Points Earned
+- Loyalty Points Redeemed
 
 ---
 
@@ -163,47 +137,60 @@ The project utilizes airline loyalty program data consisting of:
 
 | Category | Technologies |
 |-----------|--------------|
-| Programming | Python |
+| Programming Language | Python |
 | Data Processing | Pandas, NumPy |
 | Machine Learning | Scikit-Learn, XGBoost |
-| Visualization | Power BI, Matplotlib |
+| Data Visualization | Power BI, Matplotlib |
 | Database | SQL |
-| Development | Jupyter Notebook |
+| Development Environment | Jupyter Notebook |
 
 ---
 
 # 🧹 Data Preparation
 
-The dataset was cleaned and standardized through:
+The raw airline dataset underwent multiple preprocessing steps before analysis:
 
 - Missing value handling
 - Data validation
-- Data type corrections
+- Data standardization
 - Customer profile integration
 - Flight activity aggregation
-- Feature normalization
+- Data quality verification
+
+These preprocessing steps ensured consistency and improved model performance.
 
 ---
 
 # ⚙️ Feature Engineering
 
-Business-driven features created include:
+Several business-oriented features were engineered to improve customer analytics and predictive performance.
+
+### Customer Metrics
 
 - Total Flights
 - Total Distance Travelled
 - Points Balance
 - Redemption Rate
-- Customer Lifetime Value (CLV)
+
+### Segmentation Features
+
+- Customer Lifetime Value (CLV) Segment
 - Activity Segment
-- CLV Segment
 - Customer Segment
-- Customer Risk Indicators
+
+### Risk Indicators
+
+- Salary Missing Flag
+- Cancellation Flag
+- Churn Indicators
 
 ---
 
 # 👥 Customer Segmentation
 
-Customers were categorized into business-oriented groups such as:
+Customers were grouped using behavioral and value-based metrics to better understand engagement across the loyalty program.
+
+Major customer groups include:
 
 - High Value Active
 - High Value At Risk
@@ -211,21 +198,21 @@ Customers were categorized into business-oriented groups such as:
 - Medium Value Casual
 - Low Value Customers
 
-This segmentation enabled targeted retention strategies for different customer profiles.
+These segments support targeted marketing campaigns and personalized retention strategies.
 
 ---
 
-# 🤖 Machine Learning Pipeline
+# 🤖 Machine Learning
 
-Three supervised learning models were developed and compared.
+Three supervised machine learning models were trained and evaluated for customer churn prediction.
 
 | Model | Purpose |
 |--------|----------|
-| Logistic Regression | Baseline Model |
-| Random Forest | Capture Non-Linear Relationships |
-| XGBoost | Final High-Performance Model |
+| Logistic Regression | Baseline interpretable model |
+| Random Forest | Capture non-linear relationships |
+| XGBoost | Final high-performance model |
 
-### Pipeline
+### Machine Learning Pipeline
 
 ```mermaid
 flowchart LR
@@ -242,32 +229,28 @@ Dataset
 
 --> Model_Evaluation
 
---> Final_Risk_Scoring
+--> Final_Risk_Prediction
 ```
 
-Saved trained models are included for future inference and deployment.
+The trained models classify customers into different churn-risk categories, enabling proactive intervention before customer disengagement.
 
 ---
 
-# 📈 Dashboard
+# 📈 Power BI Dashboard
 
-The Power BI dashboard provides an executive overview of:
+An interactive executive dashboard was developed to monitor customer engagement, loyalty performance, churn risk, and business KPIs.
+
+The dashboard provides insights into:
 
 - Customer Segmentation
 - Customer Lifetime Value
+- Monthly Flight Trends
 - Loyalty Program Performance
 - Reward Redemption
-- Flight Activity
-- Churn Risk Analysis
+- Churn Analysis
 - Revenue at Risk
 
-> **Dashboard Preview**
-
-<p align="center">
-
-<img src="dashboard/dashboard_preview.png" width="900">
-
-</p>
+> *(Dashboard preview will be added soon.)*
 
 ---
 
@@ -276,10 +259,10 @@ The Power BI dashboard provides an executive overview of:
 | Metric | Result |
 |----------|---------|
 | Customer Segments | 12 |
-| High-Risk Customers | 165 |
-| Revenue at Risk | ~$776K |
+| High-Risk Customers Identified | 165 |
+| Estimated Revenue at Risk | ~$776K |
 | Loyalty Points Accumulated | 48M+ |
-| Predictive Models | 3 |
+| Machine Learning Models | 3 |
 | Interactive Dashboard | ✅ |
 
 ---
@@ -288,75 +271,39 @@ The Power BI dashboard provides an executive overview of:
 
 ### Protect High-Value Customers
 
-- Personalized offers
-- Bonus mile campaigns
+- Personalized retention campaigns
+- Bonus mile offers
 - Dedicated customer outreach
-
----
 
 ### Increase Reward Redemption
 
-- Reminder campaigns
-- Simplified redemption
-- Promotional rewards
+- Limited-time reward promotions
+- Redemption reminders
+- Simplified redemption process
+
+### Early Customer Intervention
+
+- Detect prolonged inactivity
+- Trigger personalized campaigns
+- Encourage customer re-engagement
 
 ---
 
-### Early Churn Detection
-
-- Automated inactivity alerts
-- Personalized flight incentives
-- Retention campaigns
-
----
-
-# 🔮 Future Improvements
+# 🔮 Future Scope
 
 - Real-time churn prediction
-- Streamlit deployment
-- Automated ETL pipeline
-- Explainable AI using SHAP
+- Automated customer risk monitoring
+- Explainable AI for model interpretation
+- Customer recommendation system
 - Cloud deployment
-- Customer recommendation engine
+- Interactive web application
 
 ---
 
-# ⚙️ Installation
+# 📚 Project Report
 
-Clone the repository
-
-```bash
-git clone https://github.com/<username>/airline-loyalty-retention-analytics.git
-```
-
-Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
+A detailed report describing the methodology, analytics pipeline, feature engineering, machine learning implementation, business insights, and recommendations is included in this repository.
 
 ---
 
-# 👥 Team
-
-| Name | Role |
-|-------|------|
-| **Arpit Kumar** | Data Engineering & Analytics |
-| **Lakshay Bansal** | Business Intelligence & Visualization |
-| **Shikhar Shukla** | Machine Learning Engineer |
-
----
-
-# 📜 License
-
-This project is licensed under the MIT License.
-
----
-
-# ⭐ Acknowledgements
-
-This project was developed as part of **Summer Projects 2026** organized by the **Consulting & Analytics Club, IIT Guwahati**.
-
----
-
-## ⭐ If you found this project useful, consider giving the repository a star!
+## ⭐ If you found this project interesting, consider giving it a star!
