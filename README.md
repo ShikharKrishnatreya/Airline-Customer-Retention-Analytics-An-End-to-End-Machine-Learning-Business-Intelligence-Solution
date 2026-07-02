@@ -306,4 +306,10 @@ A detailed report describing the methodology, analytics pipeline, feature engine
 
 ---
 
+# 📖 Acknowledgements
+
+This project was undertaken as part of **Summer Projects 2026**, an initiative by the **Consulting & Analytics Club, IIT Guwahati**.
+
+It was designed to provide practical experience in solving an industry-inspired business problem using customer analytics, machine learning, and data visualization. The project demonstrates the complete analytics lifecycle—from data preparation and feature engineering to predictive modeling, dashboarding, and business recommendations.
+
 ## ⭐ If you found this project interesting, consider giving it a star!
